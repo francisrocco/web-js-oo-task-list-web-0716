@@ -30,7 +30,9 @@ describe('Tasks Controller', function(){
   describe('#init (note you can always use #init as a delegator...)', function() {
     beforeEach(function(){
       deleteLists(); // deletes any lists and their tasks
-      emptyArr(List.all); // for deleting instances between tests
+      emptyArr(List.all);
+      List.prototype.id=0
+      // for deleting instances between tests
       tasksController.init();
       // creates new list
       $('#add_list input:first').val('grocerries');

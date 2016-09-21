@@ -6,6 +6,7 @@ describe('List Model', function() {
     var list;
     beforeEach(function() {
       emptyArr(List.all); // for deleting instances between tests
+      List.prototype.id=0
       list = new List('Jon\'s List');
     });
     describe('Properties from initialization', function() {
@@ -17,11 +18,11 @@ describe('List Model', function() {
         var secondList = new List('Tristan\'s List');
         expect(list.id).toBe(0);
         expect(secondList.id).toBe(1);
-      });    
+      });
 
       it('should be assigned an empty array when a new List is created', function() {
         expect(list.tasks).toEqual([]);
-      });      
+      });
     }); // end Properties from Intialization
 
     describe('creating new list elements', function() {

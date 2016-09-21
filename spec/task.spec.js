@@ -6,11 +6,12 @@ describe('Task Model', function() {
     var list, task;
     beforeEach(function() {
       emptyArr(List.all); // for deleting instances between tests
+      Task.prototype.id=0
       list = new List('Jon\'s List');
       task = new Task('Walk the dog', 'high', list);
     });
 
-    describe('Properties from initialization', function() {    
+    describe('Properties from initialization', function() {
       it('should take a description when the task is created', function() {
         expect(task.description).toBe('Walk the dog');
       });
